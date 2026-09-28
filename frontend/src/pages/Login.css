@@ -1,0 +1,145 @@
+/* Login Page Styles & Responsiveness */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1.5rem;
+  width: 100%;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 450px;
+  padding: 2.5rem;
+  animation: loginCardFade 0.3s ease-out;
+}
+
+@keyframes loginCardFade {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-logo-box {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.login-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.login-subtitle {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  margin-top: 0.3rem;
+}
+
+.demo-selector-box {
+  margin-bottom: 1.5rem;
+  background: var(--bg-input);
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+}
+
+.demo-selector-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.demo-buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.4rem;
+}
+
+.demo-btn {
+  font-size: 0.75rem;
+  padding: 0.4rem 0.2rem;
+}
+
+.input-icon-wrapper {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-dim);
+}
+
+.input-with-icon {
+  padding-left: 2.5rem !important;
+}
+
+.error-banner {
+  background: rgba(244, 63, 94, 0.15);
+  border: 1px solid rgba(244, 63, 94, 0.3);
+  color: #fb7185;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+/* Mobile & Tablet Screen Adaptations */
+@media (max-width: 640px) {
+  .login-container {
+    padding: 1rem;
+  }
+
+  .login-card {
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+
+  .login-title {
+    font-size: 1.4rem;
+  }
+
+  .login-logo-box {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+  }
+
+  .demo-buttons-grid {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+
+  .demo-btn {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+}

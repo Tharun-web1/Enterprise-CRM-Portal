@@ -1,0 +1,348 @@
+.call-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(12px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.call-box {
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+  color: #fff;
+  overflow: hidden;
+}
+
+.incoming-call-box {
+  width: 380px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  animation: scaleUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.incoming-pulse-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7);
+  animation: pulse-ring 1.5s infinite;
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7); }
+  70% { box-shadow: 0 0 0 22px rgba(99, 102, 241, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); }
+}
+
+.call-btn {
+  border: none;
+  border-radius: 30px;
+  padding: 0.75rem 1.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.btn-accept {
+  background: #10b981;
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
+}
+.btn-accept:hover {
+  background: #059669;
+  transform: translateY(-2px);
+}
+
+.btn-decline {
+  background: #ef4444;
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.4);
+}
+.btn-decline:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+}
+
+.active-call-box {
+  width: 90vw;
+  max-width: 860px;
+  height: 80vh;
+  max-height: 580px;
+  display: flex;
+  flex-direction: column;
+}
+
+.call-header {
+  padding: 1rem 1.5rem;
+  background: #0f172a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.call-encryption-badge {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.call-video-grid {
+  flex: 1;
+  position: relative;
+  background: #090d16;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.main-video-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.remote-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ringing-placeholder {
+  position: absolute;
+  text-align: center;
+}
+
+.call-avatar-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #ec4899);
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+}
+
+.pip-video-wrapper {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 160px;
+  height: 110px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  background: #1e293b;
+}
+
+.local-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.local-video.hidden {
+  display: none;
+}
+
+.pip-video-off {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #334155;
+}
+
+.call-toolbar {
+  padding: 1rem 1.5rem;
+  background: #0f172a;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.control-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #334155;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.control-btn:hover {
+  background: #475569;
+  transform: scale(1.08);
+}
+
+.control-btn.active-red {
+  background: #ef4444;
+  border-color: #dc2626;
+}
+
+.control-btn.active-blue {
+  background: #2563eb;
+  border-color: #3b82f6;
+  box-shadow: 0 0 14px rgba(59, 130, 246, 0.6);
+}
+
+.screen-share-badge {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(37, 99, 235, 0.92);
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 12;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 0.25s ease-out;
+}
+
+
+.btn-end-call {
+  background: #ef4444;
+  border-color: #dc2626;
+  width: 56px;
+  height: 56px;
+}
+.btn-end-call:hover {
+  background: #dc2626;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* ── Full Screen Mobile Call UI ─────────────────── */
+@media (max-width: 768px) {
+  .call-overlay {
+    padding: 0 !important;
+    background: #0f172a !important;
+  }
+
+  .call-box.active-call-box,
+  .call-box.incoming-call-box {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: 100dvh !important;
+    height: 100vh !important;
+    max-height: 100dvh !important;
+    border-radius: 0 !important;
+    border: none !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+
+  .incoming-call-box {
+    padding: 3rem 1.5rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .call-header {
+    padding: 1rem 1.25rem !important;
+    flex-shrink: 0 !important;
+  }
+
+  .call-header h3 {
+    font-size: 0.95rem !important;
+  }
+
+  .call-encryption-badge {
+    padding: 3px 8px !important;
+    font-size: 0.7rem !important;
+  }
+
+  .call-video-grid {
+    flex: 1 1 auto !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .pip-video-wrapper {
+    width: 110px !important;
+    height: 150px !important;
+    bottom: 85px !important;
+    right: 16px !important;
+    border-radius: 12px !important;
+  }
+
+  .call-toolbar {
+    padding: 1.25rem 1.5rem calc(1.25rem + env(safe-area-inset-bottom, 0px)) 1.5rem !important;
+    gap: 1.75rem !important;
+    background: #0f172a !important;
+    flex-shrink: 0 !important;
+  }
+
+  .control-btn {
+    width: 54px !important;
+    height: 54px !important;
+  }
+
+  .btn-end-call {
+    width: 62px !important;
+    height: 62px !important;
+  }
+}
+

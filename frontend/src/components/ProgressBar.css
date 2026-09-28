@@ -1,0 +1,200 @@
+/* ProgressBar Component Styles & Animations */
+.progress-bar-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.progress-bar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.progress-label {
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.7rem;
+}
+
+.progress-percent {
+  color: var(--text-main);
+}
+
+.progress-track {
+  width: 100%;
+  background: var(--bg-input);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid var(--border-color);
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.progress-gradient-primary {
+  background: linear-gradient(90deg, #4f46e5, #8b5cf6);
+}
+
+.progress-gradient-cyan {
+  background: linear-gradient(90deg, #0284c7, #06b6d4);
+}
+
+.progress-gradient-emerald {
+  background: linear-gradient(90deg, #059669, #10b981);
+}
+
+.progress-gradient-amber {
+  background: linear-gradient(90deg, #d97706, #fbbf24);
+}
+
+.progress-gradient-rose {
+  background: linear-gradient(90deg, #e11d48, #f43f5e);
+}
+
+.animated-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 100%
+  );
+  animation: shimmerAnim 2.5s infinite linear;
+}
+
+@keyframes shimmerAnim {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.progress-glow-tip {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #ffffff;
+  box-shadow: 0 0 10px #ffffff;
+  border-radius: 2px;
+}
+
+/* SVG Radial Progress Ring */
+.radial-ring-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.radial-ring-svg {
+  transform: rotate(-90deg);
+}
+
+.radial-ring-bg {
+  fill: none;
+  stroke: var(--border-color);
+}
+
+.radial-ring-circle {
+  fill: none;
+  transition: stroke-dashoffset 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.radial-ring-text {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1;
+}
+
+.radial-ring-number {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.radial-ring-sub {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* Multi-Segment Task Bar */
+.segmented-bar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 100%;
+}
+
+.segmented-track {
+  width: 100%;
+  height: 8px;
+  background: var(--bg-input);
+  border-radius: 6px;
+  display: flex;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.segmented-portion {
+  height: 100%;
+  transition: width 0.8s ease;
+}
+
+.seg-completed { background: #10b981; }
+.seg-review    { background: #8b5cf6; }
+.seg-progress  { background: #06b6d4; }
+.seg-todo      { background: #f59e0b; }
+
+.segmented-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-completed { background: #10b981; }
+.dot-review    { background: #8b5cf6; }
+.dot-progress  { background: #06b6d4; }
+.dot-todo      { background: #f59e0b; }

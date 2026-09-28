@@ -1,0 +1,122 @@
+/* Navbar Component Styles & Responsive Rules */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 2rem;
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--primary), var(--accent-violet));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.user-name {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text-main);
+}
+
+.user-role-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+.role-manager {
+  background: rgba(139, 92, 246, 0.12);
+  color: #7c3aed;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+[data-theme='dark'] .role-manager {
+  color: #c084fc;
+}
+
+.role-team-lead {
+  background: rgba(6, 182, 212, 0.12);
+  color: #0284c7;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+[data-theme='dark'] .role-team-lead {
+  color: #38bdf8;
+}
+
+.role-employee {
+  background: rgba(16, 185, 129, 0.12);
+  color: #059669;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+[data-theme='dark'] .role-employee {
+  color: #34d399;
+}
+
+/* Tablet & Mobile Responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.75rem 1.25rem;
+  }
+  
+  .nav-brand {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .navbar {
+    padding: 0.65rem 0.85rem;
+  }
+  
+  .nav-brand span {
+    font-size: 1rem;
+  }
+
+  .nav-user {
+    gap: 0.5rem;
+  }
+
+  .user-name {
+    font-size: 0.8rem;
+    max-width: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .user-role-badge {
+    font-size: 0.65rem;
+    padding: 1px 6px;
+  }
+}

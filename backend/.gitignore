@@ -1,0 +1,36 @@
+# Environment files
+.env
+.env.*
+*.env
+!.env.example
+
+# Database
+db.sqlite3
+*.sqlite3
+*.sqlite3-journal
+*.db
+
+# Logs
+*.log
+django_errors.log
+
+# Media files (user uploads)
+media/*
+!media/.gitkeep
+!media/*/.gitkeep
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environment
+venv/
+.venv/
+env/
+ENV/
+
+# Archives
+*.zip
+*.tar.gz
