@@ -25,9 +25,9 @@ def seed_database():
         print("To override this guard on staging, set ALLOW_SEED_DB=true in your environment.\n")
         sys.exit(1)
 
-    admin_password = os.environ.get('SEED_ADMIN_PASSWORD', 'admin123')
-    lead_password = os.environ.get('SEED_LEAD_PASSWORD', 'lead123')
-    dev_password = os.environ.get('SEED_DEV_PASSWORD', 'dev123')
+    admin_password = os.environ.get('SEED_ADMIN_PASSWORD', '*******')
+    lead_password = os.environ.get('SEED_LEAD_PASSWORD', '******')
+    dev_password = os.environ.get('SEED_DEV_PASSWORD', '******')
 
     print("Resetting and seeding database with initial demo data...")
     
